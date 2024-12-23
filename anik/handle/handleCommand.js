@@ -10,6 +10,8 @@ module.exports = {
             if (file.endsWith(".js")) {
                 try {
                     const command = require(path.join(commandPath, file));
+                    global.commandCon = command.config
+                    
                     if (
                         (command.run || command.handleEvent) && // run বা handleEvent থাকতে হবে
                         command.config

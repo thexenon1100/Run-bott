@@ -15,7 +15,11 @@ module.exports.run = ({api, event, args}) => {
 
     
     
-    
+    const time = process.uptime(),
+		hours = Math.floor(time / (60 * 60)),
+		minutes = Math.floor((time % (60 * 60)) / 60),
+		seconds = Math.floor(time % 60);
+const moment = require("moment-timezone");
 
     
     
@@ -38,7 +42,7 @@ module.exports.run = ({api, event, args}) => {
 ➳𝙑𝙚𝙧𝙨𝙞𝙤𝙣 ✨: 1.0.0
 ✬𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲 : 𝐌𝐨𝐡𝐚𝐦𝐦𝐚𝐝 𝐀𝐧𝐢𝐤 🔰
 
-➳𝘽𝙤𝙩 𝙞𝙨 𝙍𝙪𝙣𝙣𝙞𝙣𝙜⌚ ${global.startTime}
+➳𝘽𝙤𝙩 𝙞𝙨 𝙍𝙪𝙣𝙣𝙞𝙣𝙜⌚ ${hours} : ${minutes} : ${seconds}
 
 🔻𝐁𝐎𝐓 𝐔𝐍𝐃𝐄𝐑 𝐏𝐑𝐎𝐓𝐄𝐂𝐓𝐄𝐃 𝐁𝐘 𝐀𝐃𝐌𝐈𝐍𝐒🔺 
 

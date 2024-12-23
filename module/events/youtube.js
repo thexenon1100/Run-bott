@@ -1,5 +1,6 @@
 module.exports.config = {
     name: "YouTube",
+    prefix: false,
     eventType: ["event"],
     permission: 0,
     credit: "Anik"

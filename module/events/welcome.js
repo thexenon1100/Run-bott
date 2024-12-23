@@ -2,9 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const videoPath = path.join(__dirname, 'cache', 'wlc.mp4');
 
-
 module.exports.config = {
     name: "welcome",
+    prefix: false,
     eventType: ["event"],
     permission: 0,
 };
@@ -15,21 +15,31 @@ module.exports.handleEvent = async ({ api, event }) => {
     if (logMessageType === "log:subscribe") {
         const addedParticipants = logMessageData.addedParticipants;
 
-        for (const member of addedParticipants) {
-            // বট আইডি চেক করা
-            if (member.userFbId === api.getCurrentUserID()) {
-                continue; // বট আইডি হলে লুপ চালিয়ে যান, কোনো মেসেজ পাঠাবেন না
-            }
+        // মেসেজ তৈরির জন্য একাধিক সদস্যের নাম সংগ্রহ করা
+        const names = [];
+        const mentions = [];
 
-            const userName = member.fullName || "নতুন সদস্য";
-            const msg = {
-                body: `আসসালামু আলাইকুম🌺 🥀༊🤗😻🤗 {name}  😍.\n\n🌸༊🥀۞Wellcome-!!-🌻🥀 To {threadName}\n{type} You are the {soThanhVien} member of this group🌻.\n\n𝄞❤️⋆⃝⑅⑅⃝•BOT OWNER♥🖤 Mohammad Anik ❤️😇Never Try To Spam Here🚫\n\n 『Mohammad Anik♥  』\n\n🥰 Follow Our Group Rules✅\n\n🤖 Hi I'm  Anik-bot messenger use help to see command 🤖.`,
-                attachment: fs.createReadStream(videoPath)
-            }
-            
+        for (const member of addedParticipants) {
+            if (member.userFbId === api.getCurrentUserID()) continue; // বট আইডি বাদ দিন
+
+            mentions.push({ tag: member.fullName, id: member.userFbId });
+            names.push(member.fullName);
+        }
+
+        if (names.length > 0) {
+            const threadInfo = await api.getThreadInfo(threadID);
+            const participantIDs = threadInfo.participantIDs;
+            const threadName = threadInfo.threadName;
+
+            const totalMembers = participantIDs.length;
+            const msg = `আসসালামু আলাইকুম🌺 🥀༊🤗😻🤗 ${names.join(', ')} 😍.\n\n🌸༊🥀۞Wellcome-!!-🌻🥀 To ${threadName}\nYou are the ${totalMembers} member of this group🌻.\n\n𝄞❤️⋆⃝⑅⑅⃝•BOT OWNER♥🖤 Mohammad Anik ❤️😇Never Try To Spam Here🚫\n\n 『Mohammad Anik♥  』\n\n🥰 Follow Our Group Rules✅\n\n🤖 Hi I'm Anik-bot messenger, use ${global.config.PREFIX}help to see commands 🤖.`;
 
             api.sendMessage(
-                msg,
+                {
+                    body: msg,
+                    mentions: mentions,
+                    attachment: fs.createReadStream(videoPath)
+                },
                 threadID
             );
         }
@@ -41,8 +51,6 @@ module.exports.handleEvent = async ({ api, event }) => {
                 threadID,
                 api.getCurrentUserID()
             );
-
-            const videoPath = path.join(__dirname, 'cache', 'wlc.mp4');
 
             // ফাইল চেক করে পাঠানো
             if (fs.existsSync(videoPath)) {

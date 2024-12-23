@@ -15,10 +15,12 @@
     "fs-extra": "^11.2.0",
     "git": "^0.1.5",
     "image-downloader": "^4.3.0",
+    "moment-timezone": "^0.5.46",
     "nayan-api-server": "^0.0.1-security",
     "nayan-media-downloader": "^0.0.1-security",
     "nayan-videos-downloader": "^0.1.1",
     "nodemon": "^3.1.9",
-    "priyanshu-fca": "^3.0.0"
+    "priyanshu-fca": "^3.0.0",
+    "request": "^2.88.2"
   }
 }

@@ -1,5 +1,6 @@
 module.exports.config = {
   name: "goibot",
+  prefix: false,
   permission: 0,
   eventType: ["event"],
   version: "1.0.0",

@@ -3,7 +3,7 @@ module.exports.config = {
     version: "1.0.0",
     permission: 0,
     eventType: ["event"],
-    credits: "Muhammad Wuniq",
+    credits: "Muhammad Anik",
     description: "Automatically reacts to all incoming messages.",
     prefix: false, // No prefix required
     category: "automation",
