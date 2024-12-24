@@ -1,8 +1,6 @@
-const { gpt } = require('./node_modules/nayan-api-server/src/index.js');
+const Youtube = require('youtube-search-api');
 
 
-
-
-
-
-
+Youtube.GetListByKeyword("song", false, 6).then(data => {
+    console.log(data)
+})

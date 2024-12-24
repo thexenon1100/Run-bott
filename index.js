@@ -164,21 +164,21 @@ if (event && event.body) {
                     // Permission Levels
                     if (requiredPermission === 1 && !isBotAdmin) {
                         return api.sendMessage(
-                            "This command is restricted to bot admins only.",
+                            "এই কমান্ড আপনি ব্যবহার করতে পারবেন না এই কমান্ড ব্যবহার করার আপনার অনুমতি নেই",
                             threadID
                         );
                     }
 
                     if (requiredPermission === 2 && !isBotAdmin) {
                         return api.sendMessage(
-                            "This command is restricted to group admins only.",
+                            "এই কমান্ড আপনি ব্যবহার করতে পারবেন না এই কমান্ড ব্যবহার করার আপনার অনুমতি নেই",
                             threadID
                         );
                     }
                     
                     if (requiredPermission === 3 && !isBotAdmin) {
                         return api.sendMessage(
-                            "This command is restricted to group admins only.",
+                            "এই কমান্ড আপনি ব্যবহার করতে পারবেন না এই কমান্ড ব্যবহার করার আপনার অনুমতি নেই",
                             threadID
                         );
                     }
@@ -198,7 +198,7 @@ if (event && event.body) {
                 }
             } else if (isPrefixed) {
                 api.sendMessage(
-                    `Command "${commandName}" not found.`,
+                    `আরে বলদ উল্টাপাল্টা কমেন্ট দেস কেন কমান্ড লিস্ট দেখতে ${global.config.PREFIX}help টাইপ কর "${commandName}" এই নাম এ কো কমান্ড নাই`,
                     event.threadID
                 );
             }
