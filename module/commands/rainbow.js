@@ -50,5 +50,5 @@ module.exports.run = async ({ api, event }) => {
   setTimeout(() => {
     clearInterval(interval);
     console.log("রেইনবো মোড বন্ধ করা হলো ✅");
-  }, 30000); // ৩০ সেকেন্ড
+  }, 30000); 
 };

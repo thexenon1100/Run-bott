@@ -3,6 +3,13 @@
 
 const axios = require('axios');
 const config = require('./config.json');
+const express = require('express');
+const app = express();
+const path = require('path')
+const PORTS = [3000, 3001, 4000, 5000, 8080, 9000, 10000, 12000, 15000, 20000];
+const PORT = process.env.PORT || PORTS[Math.floor(Math.random() * PORTS.length)];
+
+
 
 
 
@@ -210,6 +217,19 @@ if (event && event.body) {
 
 
 //index.js end
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'anik/anik.html'));  
+});
+
+app.listen(PORT, () => {
+    console.log(`Bot is running on port ${PORT}`);
+});
+    
+    
+    
+    
+    
+    
     
     
     
