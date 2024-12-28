@@ -97,6 +97,7 @@ api.sendMessage(res.data.reply, event.threadID, event.messageID);
     } catch(error) {
     
     console.log(error)
+	      api.sendMessage(errmsg, event.threadID, event.messageID); 
         
     }
     
