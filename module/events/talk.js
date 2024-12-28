@@ -14,11 +14,12 @@ module.exports.config = {
 module.exports.handleEvent = async ({api, event}) => {
 const botID = api.getCurrentUserID(); 
 const repliedMessage = event.messageReply;
+const errmsg = '~~ওহ্, baby! এটা আমাকে শিখানো হয় নাই🥺।~~\n\n এইটা আমাকে শিখাও এইভাবে\n\n /teach কি করো = তোমার কথা ভাবতাছি জান \n\n /teach khaico = tumi khele amar khawa hoy jay🥰'
 
 
 if(event.body) {
 
-	if (event.body.toLowerCase() === 'bot' || event.body === 'বট') {
+if (event.body.toLowerCase() === 'bot' || event.body === 'বট') {
             const tl = [
                 "বেশি bot Bot করলে leave নিবো কিন্তু😒😒",
                 "উফ্স বেবী একটা কিস দেও 🥵",
@@ -48,7 +49,7 @@ if(event.body) {
 
             const randomMessage = tl[Math.floor(Math.random() * tl.length)];
             await api.sendMessage(randomMessage, event.threadID, event.messageID);
-	}else if(event.body.toLowerCase().startsWith("bot")) {
+        } else if(event.body.toLowerCase().startsWith("bot")) {
 
 
 
@@ -58,7 +59,7 @@ const res = await axios.get(`https://talk-t3tz.onrender.com/get?key=${rcv}`);
 api.sendMessage(res.data.reply, event.threadID, event.messageID);
 } catch (error) {
     console.error("Error:", error.message);
-    api.sendMessage("দুঃখিত! আমি কিছু খুঁজে পাইনি।", event.threadID); 
+    api.sendMessage(errmsg, event.threadID, event.messageID); 
 }
 
 
@@ -72,11 +73,32 @@ const res = await axios.get(`https://talk-t3tz.onrender.com/get?key=${rcv}`);
 api.sendMessage(res.data.reply, event.threadID, event.messageID);
 } catch (error) {
     console.error("Error:", error.message);
-    api.sendMessage("দুঃখিত! আমি কিছু খুঁজে পাইনি।", event.threadID); 
+    api.sendMessage(errmsg, event.threadID, event.messageID); 
 }
 
 
     }else {
+    
+    try{
+    
+    if (repliedMessage && repliedMessage.senderID === botID) {
+    
+    
+ const msg = event.body.toLowerCase().trim();
+ 
+        const response = await axios.get(`https://talk-t3tz.onrender.com/get?key=${encodeURIComponent(msg)}`);
+        
+        
+    api.sendMessage(response.data.reply, event.threadID, event.messageID);
+        
+        
+    }
+        
+    } catch(error) {
+    
+    console.log(error)
+        
+    }
     
    
     
