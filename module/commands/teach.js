@@ -32,7 +32,12 @@ module.exports.run = ({ api, event }) => {
 			}, {
 				headers: { "Content-Type": "application/json" } 
 			});
-			console.log('Success:', response.data); 
+			
+			
+			console.log('Success:', response.data); 		
+			api.sendMessage(`Success: ${cleanKey}=${value}`, event.threadID, )
+			
+			
 		} catch (error) {
 			if (error.response) {
 				console.error('Error Response:', error.response.data); 
