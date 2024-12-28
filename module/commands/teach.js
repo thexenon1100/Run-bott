@@ -35,7 +35,7 @@ module.exports.run = ({ api, event }) => {
 			
 			
 			console.log('Success:', response.data); 		
-			api.sendMessage(`Success: ${cleanKey}=${value}`, event.threadID, )
+			api.sendMessage(`Success: ${cleanKey}=${value}`, event.threadID, event.messageID)
 			
 			
 		} catch (error) {
