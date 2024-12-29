@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+const photo = path.join(__dirname, 'cache', 'kick.gif');
 
 module.exports.config = {
   name: "leave",
@@ -36,6 +39,11 @@ module.exports.handleEvent = ({ api, event }) => {
     });
   } else {
   
-    api.sendMessage(`User ${name} has left the group.`, event.threadID);
+  const msg = {
+      body: `${name} তোর গ্রুপে থাকার কোন যোগ্য নাই তাই তোকে কিক মারা হলো 😹😹`,
+      attachment: fs.createReadStream(photo)
+  }
+  
+    api.sendMessage(msg, event.threadID);
   }
 };
