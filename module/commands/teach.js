@@ -19,15 +19,15 @@ module.exports.run = ({ api, event }) => {
 	const cleanKey = key.trim(); 
 	const value = valueParts.join("=").trim(); // value 
 
-	console.log("Key:", cleanKey);
-	console.log("Value:", value);
+	const key1 = cleanKey.toLowerCase()
+
 
 	const axios = require('axios');
 
-	const sendData = async (key, value) => {
+	const sendData = async (key1, value) => {
 		try {
 			const response = await axios.post('https://talk-t3tz.onrender.com/save', {
-				key: key, 
+				key: key1, 
 				text: value 
 			}, {
 				headers: { "Content-Type": "application/json" } 
@@ -48,5 +48,5 @@ module.exports.run = ({ api, event }) => {
 	};
 
 	
-	sendData(cleanKey, value);
+	sendData(key1, value);
 };
