@@ -2,7 +2,8 @@ module.exports.config = {
     name: "inbox",           
     description: "admin information",
     permission: 0,          
-    prefix: true,         
+    prefix: true,
+    credit: "anik",
     cooldown: 5,
 }
 
