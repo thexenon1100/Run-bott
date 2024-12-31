@@ -23,10 +23,12 @@ module.exports.run = ({ api, event }) => {
 
 
 	const axios = require('axios');
+			
 
 	const sendData = async (key1, value) => {
 		try {
-			const response = await axios.post('https://talk-t3tz.onrender.com/save', {
+
+			const response = await axios.post(`${global.anikApi.talk}/save`, {
 				key: key1, 
 				text: value 
 			}, {
