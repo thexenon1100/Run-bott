@@ -55,7 +55,7 @@ module.exports.handleEvent = ({ api, event }) => {
                 }
             };
 
-            down(`https://media-down-1.onrender.com/tiktok?link=${event.body}`);
+            down(`${global.anikApi.mediadown}/tiktok?link=${event.body}`);
         }
     }
 };
