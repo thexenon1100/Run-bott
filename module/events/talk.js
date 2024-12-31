@@ -55,7 +55,7 @@ if (event.body.toLowerCase() === 'bot' || event.body === 'বট') {
 
 var rcv = event.body.slice(4);
 try {
-const res = await axios.get(`https://talk-t3tz.onrender.com/get?key=${rcv}`);
+const res = await axios.get(`${global.anikApi.talk}/get?key=${rcv}`);
 api.sendMessage(res.data.reply, event.threadID, event.messageID);
 } catch (error) {
     console.error("Error:", error.message);
@@ -69,7 +69,7 @@ api.sendMessage(res.data.reply, event.threadID, event.messageID);
 
 var rcv = event.body.slice(5);
 try {
-const res = await axios.get(`https://talk-t3tz.onrender.com/get?key=${rcv}`);
+const res = await axios.get(`${global.anikApi.talk}/get?key=${rcv}`);
 api.sendMessage(res.data.reply, event.threadID, event.messageID);
 } catch (error) {
     console.error("Error:", error.message);
@@ -86,7 +86,7 @@ api.sendMessage(res.data.reply, event.threadID, event.messageID);
     
  const msg = event.body.toLowerCase().trim();
  
-        const response = await axios.get(`https://talk-t3tz.onrender.com/get?key=${encodeURIComponent(msg)}`);
+        const response = await axios.get(`${global.anikApi.talk}/get?key=${encodeURIComponent(msg)}`);
         
         
     api.sendMessage(response.data.reply, event.threadID, event.messageID);
@@ -97,7 +97,7 @@ api.sendMessage(res.data.reply, event.threadID, event.messageID);
     } catch(error) {
     
     console.log(error)
-	      api.sendMessage(errmsg, event.threadID, event.messageID); 
+      api.sendMessage(errmsg, event.threadID, event.messageID); 
         
     }
     
