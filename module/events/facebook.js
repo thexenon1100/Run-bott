@@ -57,7 +57,7 @@ module.exports.handleEvent = ({ api, event }) => {
                 }
             };
 
-            down(`https://media-down-1.onrender.com/facebook?link=${event.body}`);
+            down(`${global.anikApi.mediadown}/facebook?link=${event.body}`);
         }
     }
 };
