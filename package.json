@@ -20,6 +20,7 @@
     "nayan-api-server": "^0.0.1-security",
     "nayan-media-downloader": "^0.0.1-security",
     "nayan-videos-downloader": "^0.1.1",
+    "node-schedule": "^2.1.1",
     "nodemon": "^3.1.9",
     "pm2": "^5.4.3",
     "priyanshu-fca": "^3.0.0",
