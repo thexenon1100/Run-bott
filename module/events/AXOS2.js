@@ -25,7 +25,7 @@ module.exports.handleEvent = async ({ api, event }) => {
 				attachment: fs.createReadStream(__dirname + `/noprefix/pagolnaki.mp3`)
 			}
       api.sendMessage(msg2, threadID, messageID);
-    } else if (body === '🥵' || body === '😛' || body === '🤧') {
+    } else if (body === '🥵' || body === '🥵' || body === '🥵') {
       const msg3 = {
 				body: "~ জান পম পম খাবা..!!",
 				attachment: fs.createReadStream(__dirname + `/noprefix/pompomkaba.mp3`)
