@@ -36,13 +36,13 @@ var link = ["https://i.postimg.cc/j5MM8dgn/Picsart-24-12-23-11-23-30-237.jpg",
 
 ❣️❤️ENJOY MUCH MUCH ❤️❣️
 
-❌THis Bot Made By : MOHAMMAD ANIK❤️❣️
+❌THis Bot Made By : GALIB ❤️❣️
 
 🔰THIS IS BANGLA AI BOT 🔰
 
 BOT NAME : ${global.config.BOTNAME}
 
-💖TAKE LOVE FROM ANIK-BOT💖
+💖TAKE LOVE FROM GALIB-BOT💖
 
 🌺ব্যবহারে মানুষ চেনা যায় ✔️
 
@@ -50,9 +50,9 @@ BOT NAME : ${global.config.BOTNAME}
 
 ⚠️BOT:MAIN ADMIN: MOHAMMAD ANIK⚠️
 
-⚠️WHATSAPP: wa.me/+601161213515⚠️
+⚠️WHATSAPP: wa.me/⚠️
 
-⛔FACEBOOK : https://www.facebook.com/LostFragmentX
+⛔FACEBOOK : https://www.facebook.com/galib50552?mibextid=ZbWKwL
 
 🕌💪 POWER OF MUSLIM 🕋🕌
 
