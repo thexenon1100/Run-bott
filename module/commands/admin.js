@@ -46,7 +46,7 @@ BOT NAME : ${global.config.BOTNAME}
 
 🌺ব্যবহারে মানুষ চেনা যায় ✔️
 
-⚠️BOT: ADMIN: MOHAMMAD ANIK⚠️
+⚠️BOT: ADMIN: GALIB⚠️
 
 ⚠️BOT:MAIN ADMIN: MOHAMMAD ANIK⚠️
 
